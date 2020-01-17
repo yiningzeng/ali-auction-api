@@ -1,0 +1,1356 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /auction_item/:
+    get:
+      tags:
+      - auction_item
+      description: get AuctionItem
+      operationId: AuctionItemController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AuctionItem'
+        "403":
+          description: ""
+    post:
+      tags:
+      - auction_item
+      description: create AuctionItem
+      operationId: AuctionItemController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for AuctionItem content
+        required: true
+        schema:
+          $ref: '#/definitions/models.AuctionItem'
+      responses:
+        "201":
+          description: '{int} models.AuctionItem'
+        "403":
+          description: body is empty
+  /auction_item/{id}:
+    get:
+      tags:
+      - auction_item
+      description: get AuctionItem by id
+      operationId: AuctionItemController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AuctionItem'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - auction_item
+      description: update the AuctionItem
+      operationId: AuctionItemController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for AuctionItem content
+        required: true
+        schema:
+          $ref: '#/definitions/models.AuctionItem'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AuctionItem'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - auction_item
+      description: delete the AuctionItem
+      operationId: AuctionItemController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /auction_target/:
+    get:
+      tags:
+      - auction_target
+      description: get AuctionTarget
+      operationId: AuctionTargetController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AuctionTarget'
+        "403":
+          description: ""
+    post:
+      tags:
+      - auction_target
+      description: create AuctionTarget
+      operationId: AuctionTargetController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for AuctionTarget content
+        required: true
+        schema:
+          $ref: '#/definitions/models.AuctionTarget'
+      responses:
+        "201":
+          description: '{int} models.AuctionTarget'
+        "403":
+          description: body is empty
+  /auction_target/{id}:
+    get:
+      tags:
+      - auction_target
+      description: get AuctionTarget by id
+      operationId: AuctionTargetController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AuctionTarget'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - auction_target
+      description: update the AuctionTarget
+      operationId: AuctionTargetController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for AuctionTarget content
+        required: true
+        schema:
+          $ref: '#/definitions/models.AuctionTarget'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.AuctionTarget'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - auction_target
+      description: delete the AuctionTarget
+      operationId: AuctionTargetController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /gocron_host/:
+    get:
+      tags:
+      - gocron_host
+      description: get GocronHost
+      operationId: GocronHostController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronHost'
+        "403":
+          description: ""
+    post:
+      tags:
+      - gocron_host
+      description: create GocronHost
+      operationId: GocronHostController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GocronHost content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronHost'
+      responses:
+        "201":
+          description: '{int} models.GocronHost'
+        "403":
+          description: body is empty
+  /gocron_host/{id}:
+    get:
+      tags:
+      - gocron_host
+      description: get GocronHost by id
+      operationId: GocronHostController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronHost'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - gocron_host
+      description: update the GocronHost
+      operationId: GocronHostController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GocronHost content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronHost'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronHost'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - gocron_host
+      description: delete the GocronHost
+      operationId: GocronHostController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /gocron_login_log/:
+    get:
+      tags:
+      - gocron_login_log
+      description: get GocronLoginLog
+      operationId: GocronLoginLogController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronLoginLog'
+        "403":
+          description: ""
+    post:
+      tags:
+      - gocron_login_log
+      description: create GocronLoginLog
+      operationId: GocronLoginLogController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GocronLoginLog content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronLoginLog'
+      responses:
+        "201":
+          description: '{int} models.GocronLoginLog'
+        "403":
+          description: body is empty
+  /gocron_login_log/{id}:
+    get:
+      tags:
+      - gocron_login_log
+      description: get GocronLoginLog by id
+      operationId: GocronLoginLogController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronLoginLog'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - gocron_login_log
+      description: update the GocronLoginLog
+      operationId: GocronLoginLogController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GocronLoginLog content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronLoginLog'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronLoginLog'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - gocron_login_log
+      description: delete the GocronLoginLog
+      operationId: GocronLoginLogController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /gocron_setting/:
+    get:
+      tags:
+      - gocron_setting
+      description: get GocronSetting
+      operationId: GocronSettingController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronSetting'
+        "403":
+          description: ""
+    post:
+      tags:
+      - gocron_setting
+      description: create GocronSetting
+      operationId: GocronSettingController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GocronSetting content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronSetting'
+      responses:
+        "201":
+          description: '{int} models.GocronSetting'
+        "403":
+          description: body is empty
+  /gocron_setting/{id}:
+    get:
+      tags:
+      - gocron_setting
+      description: get GocronSetting by id
+      operationId: GocronSettingController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronSetting'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - gocron_setting
+      description: update the GocronSetting
+      operationId: GocronSettingController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GocronSetting content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronSetting'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronSetting'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - gocron_setting
+      description: delete the GocronSetting
+      operationId: GocronSettingController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /gocron_task/:
+    get:
+      tags:
+      - gocron_task
+      description: get GocronTask
+      operationId: GocronTaskController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTask'
+        "403":
+          description: ""
+    post:
+      tags:
+      - gocron_task
+      description: create GocronTask
+      operationId: GocronTaskController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GocronTask content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronTask'
+      responses:
+        "201":
+          description: '{int} models.GocronTask'
+        "403":
+          description: body is empty
+  /gocron_task/{id}:
+    get:
+      tags:
+      - gocron_task
+      description: get GocronTask by id
+      operationId: GocronTaskController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTask'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - gocron_task
+      description: update the GocronTask
+      operationId: GocronTaskController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GocronTask content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronTask'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTask'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - gocron_task
+      description: delete the GocronTask
+      operationId: GocronTaskController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /gocron_task_host/:
+    get:
+      tags:
+      - gocron_task_host
+      description: get GocronTaskHost
+      operationId: GocronTaskHostController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTaskHost'
+        "403":
+          description: ""
+    post:
+      tags:
+      - gocron_task_host
+      description: create GocronTaskHost
+      operationId: GocronTaskHostController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GocronTaskHost content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronTaskHost'
+      responses:
+        "201":
+          description: '{int} models.GocronTaskHost'
+        "403":
+          description: body is empty
+  /gocron_task_host/{id}:
+    get:
+      tags:
+      - gocron_task_host
+      description: get GocronTaskHost by id
+      operationId: GocronTaskHostController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTaskHost'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - gocron_task_host
+      description: update the GocronTaskHost
+      operationId: GocronTaskHostController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GocronTaskHost content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronTaskHost'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTaskHost'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - gocron_task_host
+      description: delete the GocronTaskHost
+      operationId: GocronTaskHostController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /gocron_task_log/:
+    get:
+      tags:
+      - gocron_task_log
+      description: get GocronTaskLog
+      operationId: GocronTaskLogController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTaskLog'
+        "403":
+          description: ""
+    post:
+      tags:
+      - gocron_task_log
+      description: create GocronTaskLog
+      operationId: GocronTaskLogController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GocronTaskLog content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronTaskLog'
+      responses:
+        "201":
+          description: '{int} models.GocronTaskLog'
+        "403":
+          description: body is empty
+  /gocron_task_log/{id}:
+    get:
+      tags:
+      - gocron_task_log
+      description: get GocronTaskLog by id
+      operationId: GocronTaskLogController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTaskLog'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - gocron_task_log
+      description: update the GocronTaskLog
+      operationId: GocronTaskLogController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GocronTaskLog content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronTaskLog'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronTaskLog'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - gocron_task_log
+      description: delete the GocronTaskLog
+      operationId: GocronTaskLogController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /gocron_user/:
+    get:
+      tags:
+      - gocron_user
+      description: get GocronUser
+      operationId: GocronUserController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronUser'
+        "403":
+          description: ""
+    post:
+      tags:
+      - gocron_user
+      description: create GocronUser
+      operationId: GocronUserController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GocronUser content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronUser'
+      responses:
+        "201":
+          description: '{int} models.GocronUser'
+        "403":
+          description: body is empty
+  /gocron_user/{id}:
+    get:
+      tags:
+      - gocron_user
+      description: get GocronUser by id
+      operationId: GocronUserController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronUser'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - gocron_user
+      description: update the GocronUser
+      operationId: GocronUserController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GocronUser content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GocronUser'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GocronUser'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - gocron_user
+      description: delete the GocronUser
+      operationId: GocronUserController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  models.AuctionItem:
+    title: AuctionItem
+    type: object
+    properties:
+      ApplyCount:
+        type: integer
+        format: int64
+      AuctionTargetId:
+        type: integer
+        format: int64
+      BidCount:
+        type: integer
+        format: int64
+      BuyRestrictions:
+        type: integer
+        format: int64
+      CatNames:
+        type: string
+      CollateralCatName:
+        type: string
+      ConsultPrice:
+        type: number
+        format: double
+      Credit:
+        type: boolean
+      CurrentPrice:
+        type: number
+        format: double
+      DelayCount:
+        type: integer
+        format: int64
+      End:
+        type: integer
+        format: int64
+      Id:
+        type: integer
+        format: int64
+      InitialPrice:
+        type: number
+        format: double
+      ItemUrl:
+        type: string
+      MarketPrice:
+        type: number
+        format: double
+      MnNotice:
+        type: boolean
+      PicUrl:
+        type: string
+      SellOff:
+        type: boolean
+      Start:
+        type: integer
+        format: int64
+      Status:
+        type: string
+      SupportLoans:
+        type: integer
+        format: int64
+      SupportOrgLoan:
+        type: integer
+        format: int64
+      TimeToEnd:
+        type: integer
+        format: int64
+      TimeToStart:
+        type: integer
+        format: int64
+      Title:
+        type: string
+      UpdateTime:
+        type: string
+        format: datetime
+      ViewerCount:
+        type: integer
+        format: int64
+      XmppVersion:
+        type: string
+  models.AuctionTarget:
+    title: AuctionTarget
+    type: object
+    properties:
+      Available:
+        type: boolean
+      Category:
+        type: string
+      CityOrLocation:
+        type: string
+      CreateTime:
+        type: string
+        format: datetime
+      Id:
+        type: integer
+        format: int64
+      Url:
+        type: string
+  models.GocronHost:
+    title: GocronHost
+    type: object
+    properties:
+      Alias:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Name:
+        type: string
+      Port:
+        type: integer
+        format: int64
+      Remark:
+        type: string
+  models.GocronLoginLog:
+    title: GocronLoginLog
+    type: object
+    properties:
+      Created:
+        type: string
+        format: datetime
+      Id:
+        type: integer
+        format: int64
+      Ip:
+        type: string
+      Username:
+        type: string
+  models.GocronSetting:
+    title: GocronSetting
+    type: object
+    properties:
+      Code:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Key:
+        type: string
+      Value:
+        type: string
+  models.GocronTask:
+    title: GocronTask
+    type: object
+    properties:
+      Command:
+        type: string
+      Created:
+        type: string
+        format: datetime
+      Deleted:
+        type: string
+        format: datetime
+      DependencyStatus:
+        type: integer
+        format: int32
+      DependencyTaskId:
+        type: string
+      HttpMethod:
+        type: integer
+        format: int32
+      Id:
+        type: integer
+        format: int64
+      Level:
+        type: integer
+        format: int32
+      Multi:
+        type: integer
+        format: int32
+      Name:
+        type: string
+      NotifyKeyword:
+        type: string
+      NotifyReceiverId:
+        type: string
+      NotifyStatus:
+        type: integer
+        format: int32
+      NotifyType:
+        type: integer
+        format: int32
+      Protocol:
+        type: integer
+        format: int32
+      Remark:
+        type: string
+      RetryInterval:
+        type: integer
+        format: int32
+      RetryTimes:
+        type: integer
+        format: int32
+      Spec:
+        type: string
+      Status:
+        type: integer
+        format: int32
+      Tag:
+        type: string
+      Timeout:
+        type: integer
+        format: int64
+  models.GocronTaskHost:
+    title: GocronTaskHost
+    type: object
+    properties:
+      HostId:
+        type: integer
+        format: int32
+      Id:
+        type: integer
+        format: int64
+      TaskId:
+        type: integer
+        format: int64
+  models.GocronTaskLog:
+    title: GocronTaskLog
+    type: object
+    properties:
+      Command:
+        type: string
+      EndTime:
+        type: string
+        format: datetime
+      Hostname:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Name:
+        type: string
+      Protocol:
+        type: integer
+        format: int32
+      Result:
+        type: string
+      RetryTimes:
+        type: integer
+        format: int32
+      Spec:
+        type: string
+      StartTime:
+        type: string
+        format: datetime
+      Status:
+        type: integer
+        format: int32
+      TaskId:
+        type: integer
+        format: int64
+      Timeout:
+        type: integer
+        format: int64
+  models.GocronUser:
+    title: GocronUser
+    type: object
+    properties:
+      Created:
+        type: string
+        format: datetime
+      Email:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      IsAdmin:
+        type: integer
+        format: int32
+      Name:
+        type: string
+      Password:
+        type: string
+      Salt:
+        type: string
+      Status:
+        type: integer
+        format: int32
+      Updated:
+        type: string
+        format: datetime
+tags:
+- name: gocron_user
+  description: |
+    GocronUserController operations for GocronUser
+- name: gocron_task
+  description: |
+    GocronTaskController operations for GocronTask
+- name: gocron_task_log
+  description: |
+    GocronTaskLogController operations for GocronTaskLog
+- name: gocron_host
+  description: |
+    GocronHostController operations for GocronHost
+- name: gocron_setting
+  description: |
+    GocronSettingController operations for GocronSetting
+- name: gocron_login_log
+  description: |
+    GocronLoginLogController operations for GocronLoginLog
+- name: gocron_task_host
+  description: |
+    GocronTaskHostController operations for GocronTaskHost
+- name: auction_item
+  description: |
+    AuctionItemController operations for AuctionItem
+- name: auction_target
+  description: |
+    AuctionTargetController operations for AuctionTarget
